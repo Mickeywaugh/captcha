@@ -1,13 +1,14 @@
 <?php
 
-namespace Gregwar\Captcha;
+namespace Mickeywaugh\PhpCaptcha;
 
+use GdImage;
 use Symfony\Component\Finder\Finder;
 
 /**
  * Handles actions related to captcha image files including saving and garbage collection
  *
- * @author Gregwar <g.passault@gmail.com>
+ * @author Mickeywaugh <g.passault@gmail.com>
  * @author Jeremy Livingston <jeremy@quizzle.com>
  */
 class ImageFileHandler
@@ -53,7 +54,7 @@ class ImageFileHandler
     /**
      * Saves the provided image content as a file
      *
-     * @param string $contents
+     * @param GdImage $contents
      *
      * @return string
      */

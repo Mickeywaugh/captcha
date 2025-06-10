@@ -1,8 +1,7 @@
-Base On  gregwar/Captcha
+Base On  Mickeywaugh/Captcha
 =======
 
 ![Captchas examples](http://gregwar.com/captchas.png)
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YUXRLWHQSWS6L)
 
 Installation
 ============
@@ -13,7 +12,7 @@ With composer :
 {
     ...
     "require": {
-        "gregwar/captcha": "1.*"
+        "mickeywaugh/captcha": "1.*"
     }
 }
 ```
@@ -26,7 +25,7 @@ You can create a captcha with the `CaptchaBuilder` :
 ```php
 <?php
 
-use Gregwar\Captcha\CaptchaBuilder;
+use Mickeywaugh\Captcha\CaptchaBuilder;
 
 $builder = new CaptchaBuilder;
 $builder->build();
@@ -104,8 +103,8 @@ If you want to change the number of character, you can call the phrase builder d
 extra parameters:
 
 ```php
-use Gregwar\Captcha\CaptchaBuilder;
-use Gregwar\Captcha\PhraseBuilder;
+use Mickeywaugh\Captcha\CaptchaBuilder;
+use Mickeywaugh\Captcha\PhraseBuilder;
 
 // Will build phrases of 3 characters
 $phraseBuilder = new PhraseBuilder(4);
@@ -135,7 +134,7 @@ Symfony Bundle
 ================
 
 You can have a look at the following repository to enjoy the Symfony 2 bundle packaging this captcha generator :
-https://github.com/Gregwar/CaptchaBundle
+https://gitee.com/Mickeywaugh/PhpCaptcha
 
 Yii2 Extension
 ===============

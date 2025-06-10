@@ -1,23 +1,23 @@
 <?php
 
-namespace Gregwar\Captcha;
+namespace Mickeywaugh\PhpCaptcha;
 
 /**
  * Generates random phrase
  *
- * @author Gregwar <g.passault@gmail.com>
+ * @author Mickeywaugh <g.passault@gmail.com>
  */
 class PhraseBuilder implements PhraseBuilderInterface
 {
     /**
      * @var int
      */
-    public $length;
+    public int $length;
 
     /**
      * @var string
      */
-    public $charset;
+    public string $charset;
     /**
      * Constructs a PhraseBuilder with given parameters
      */
@@ -30,7 +30,7 @@ class PhraseBuilder implements PhraseBuilderInterface
     /**
      * Generates  random phrase of given length with given charset
      */
-    public function build($length = null, $charset = null)
+    public function build($length = null, $charset = null): string
     {
         if ($length !== null) {
             $this->length = $length;
@@ -52,15 +52,15 @@ class PhraseBuilder implements PhraseBuilderInterface
     /**
      * "Niceize" a code
      */
-    public function niceize($str)
+    public function niceize($str): string
     {
         return self::doNiceize($str);
     }
-    
+
     /**
      * A static helper to niceize
      */
-    public static function doNiceize($str)
+    public static function doNiceize($str): string
     {
         return strtr(strtolower($str), '01', 'ol');
     }
@@ -68,7 +68,7 @@ class PhraseBuilder implements PhraseBuilderInterface
     /**
      * A static helper to compare
      */
-    public static function comparePhrases($str1, $str2)
+    public static function comparePhrases($str1, $str2): bool
     {
         return self::doNiceize($str1) === self::doNiceize($str2);
     }

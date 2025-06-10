@@ -1,11 +1,11 @@
 <?php
 
-namespace Gregwar\Captcha;
+namespace Mickeywaugh\PhpCaptcha;
 
 /**
  * Interface for the PhraseBuilder
  *
- * @author Gregwar <g.passault@gmail.com>
+ * @author Mickeywaugh <g.passault@gmail.com>
  */
 interface PhraseBuilderInterface
 {

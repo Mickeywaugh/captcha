@@ -1,14 +1,15 @@
 <?php
 
-namespace Gregwar\Captcha;
+namespace Mickeywaugh\PhpCaptcha;
 
 use \Exception;
+use GdImage;
 
 /**
  * Builds a new captcha image
  * Uses the fingerprint parameter, if one is passed, to generate the same image
  *
- * @author Gregwar <g.passault@gmail.com>
+ * @author Mickeywaugh <g.passault@gmail.com>
  * @author Jeremy Livingston <jeremy.j.livingston@gmail.com>
  */
 class CaptchaBuilder implements CaptchaBuilderInterface
@@ -16,7 +17,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     /**
      * @var array
      */
-    protected $fingerprint = array();
+    protected $fingerprint = [];
 
     /**
      * @var bool
@@ -26,7 +27,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     /**
      * @var array
      */
-    protected $textColor = array();
+    protected $textColor = [];
 
     /**
      * @var array
@@ -49,17 +50,17 @@ class CaptchaBuilder implements CaptchaBuilderInterface
      * @var string
      */
 
-    protected $imageType = "jpeg";
+    protected string $imageType = "jpeg";
 
     /**
      * @var array
      */
-    protected $backgroundImages = array();
+    protected array $backgroundImages = [];
 
     /**
-     * @var resource
+     * @var GdImage
      */
-    protected $contents = null;
+    protected GdImage $contents;
 
     /**
      * @var string
@@ -69,12 +70,12 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     /**
      * @var PhraseBuilderInterface
      */
-    protected $builder;
+    protected PhraseBuilderInterface $builder;
 
     /**
      * @var bool
      */
-    protected $distortion = true;
+    protected bool $distortion = true;
 
     /**
      * The maximum number of lines to draw in front of
@@ -91,33 +92,33 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     /**
      * The maximum angle of char
      */
-    protected $maxAngle = 8;
+    protected int $maxAngle = 8;
 
     /**
      * The maximum offset of char
      */
-    protected $maxOffset = 5;
+    protected int $maxOffset = 5;
 
     /**
      * Is the interpolation enabled ?
      *
      * @var bool
      */
-    protected $interpolation = true;
+    protected bool $interpolation = true;
 
     /**
      * Ignore all effects
      *
      * @var bool
      */
-    protected $ignoreAllEffects = false;
+    protected bool $ignoreAllEffects = false;
 
     /**
      * Allowed image types for the background images
      *
      * @var array
      */
-    protected $allowedBackgroundImageTypes = array('image/png', 'image/jpeg', 'image/gif');
+    protected $allowedBackgroundImageTypes = ['image/png', 'image/jpeg', 'image/gif'];
 
     /**
      * The image contents
@@ -146,7 +147,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
      */
     public $tempDir = 'temp/';
 
-    public function __construct($phrase = null, PhraseBuilderInterface $builder = null)
+    public function __construct($phrase = null, $builder = null)
     {
         if ($builder === null) {
             $this->builder = new PhraseBuilder;
@@ -459,7 +460,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
             $this->fingerprint = $fingerprint;
             $this->useFingerprint = true;
         } else {
-            $this->fingerprint = array();
+            $this->fingerprint = [];
             $this->useFingerprint = false;
         }
 
@@ -672,7 +673,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     protected function rand($min, $max)
     {
         if (!is_array($this->fingerprint)) {
-            $this->fingerprint = array();
+            $this->fingerprint = [];
         }
 
         if ($this->useFingerprint) {
