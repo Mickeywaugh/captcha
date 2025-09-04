@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/../vendor/autoload.php';
 
-        use Mickeywaugh\PhpCaptcha\PhraseBuilder;
+        use Mickeywaugh\Captcha\PhraseBuilder;
 
 // We need the session to check the phrase after submitting
 session_start();

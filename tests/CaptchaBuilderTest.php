@@ -2,7 +2,7 @@
 
 namespace Test;
 
-use Mickeywaugh\PhpCaptcha\CaptchaBuilder;
+use Mickeywaugh\Captcha\CaptchaBuilder;
 use PHPUnit\Framework\TestCase;
 
 class CaptchaBuilderTest extends TestCase

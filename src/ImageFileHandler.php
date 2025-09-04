@@ -1,6 +1,6 @@
 <?php
 
-namespace Mickeywaugh\PhpCaptcha;
+namespace Mickeywaugh\Captcha;
 
 use GdImage;
 use Symfony\Component\Finder\Finder;
