@@ -16,14 +16,14 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
+        "php": ">=8.0",
         "ext-gd": "*",
         "ext-mbstring": "*",
-        "symfony/finder": "*"
+        "symfony/finder": "^4.0|^5.0|^6.0"
     },
     "autoload": {
         "psr-4": {
-            "Mickeywaugh\\": "src"
+            "Mickeywaugh\\Captcha": "src/captcha/"
         }
     },
     "require-dev": {

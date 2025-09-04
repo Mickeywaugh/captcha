@@ -164,40 +164,41 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     public function setPhrase($phrase)
     {
         $this->phrase = (string) $phrase;
+        return $this;
     }
 
     /**
      * Enables/disable distortion
      */
-    public function setDistortion($distortion)
+    public function setDistortion($distortion): self
     {
         $this->distortion = (bool) $distortion;
 
         return $this;
     }
 
-    public function setMaxBehindLines($maxBehindLines)
+    public function setMaxBehindLines($maxBehindLines): self
     {
         $this->maxBehindLines = $maxBehindLines;
 
         return $this;
     }
 
-    public function setMaxFrontLines($maxFrontLines)
+    public function setMaxFrontLines($maxFrontLines): self
     {
         $this->maxFrontLines = $maxFrontLines;
 
         return $this;
     }
 
-    public function setMaxAngle($maxAngle)
+    public function setMaxAngle($maxAngle): self
     {
         $this->maxAngle = $maxAngle;
 
         return $this;
     }
 
-    public function setMaxOffset($maxOffset)
+    public function setMaxOffset($maxOffset): self
     {
         $this->maxOffset = $maxOffset;
 
@@ -231,7 +232,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     /**
      * Sets the text color to use
      */
-    public function setTextColor($r, $g, $b)
+    public function setTextColor($r, $g, $b): self
     {
         $this->textColor = array($r, $g, $b);
 
@@ -241,14 +242,14 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     /**
      * Sets the background color to use
      */
-    public function setBackgroundColor($r, $g, $b, $alpha = 0)
+    public function setBackgroundColor($r, $g, $b, $alpha = 0): self
     {
         $this->backgroundColor = array($r, $g, $b);
         $this->setBgAlpha($alpha);
         return $this;
     }
 
-    public function setBgAlpha($alpha)
+    public function setBgAlpha($alpha): self
     {
         $this->bgAlpha = $alpha;
         // if bgAlpha is not 0, and type is jpeg, set png as default output type; only png is supported transparent background
@@ -263,12 +264,12 @@ class CaptchaBuilder implements CaptchaBuilderInterface
         return $this->bgAlpha;
     }
 
-    public function setImageType($imageType)
+    public function setImageType($imageType): self
     {
 
         $imageType = strtolower($imageType ?: $this->imageType);
         if (!in_array($this->imageType, array('png', 'jpeg', 'gif'))) {
-            return;
+            return $this;
         }
 
         $this->imageType = $imageType;
@@ -284,7 +285,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     /**
      * Sets the line color to use  
      */
-    public function setLineColor($r, $g, $b)
+    public function setLineColor($r, $g, $b): self
     {
         $this->lineColor = array($r, $g, $b);
 
@@ -297,7 +298,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
      * @param bool $ignoreAllEffects
      * @return CaptchaBuilder
      */
-    public function setIgnoreAllEffects($ignoreAllEffects)
+    public function setIgnoreAllEffects($ignoreAllEffects): self
     {
         $this->ignoreAllEffects = $ignoreAllEffects;
 
@@ -307,7 +308,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     /**
      * Sets the list of background images to use (one image is randomly selected)
      */
-    public function setBackgroundImages(array $backgroundImages)
+    public function setBackgroundImages(array $backgroundImages): self
     {
         $this->backgroundImages = $backgroundImages;
 
@@ -454,7 +455,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface
     /**
      * Generate the image
      */
-    public function build($width = 150, $height = 40, $font = null, $fingerprint = null)
+    public function build($width = 150, $height = 40, $font = null, $fingerprint = null): self
     {
         if (null !== $fingerprint) {
             $this->fingerprint = $fingerprint;
