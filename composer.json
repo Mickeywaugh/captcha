@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Mickeywaugh\\Captcha": "src/captcha/"
+            "Mickeywaugh\\Captcha\\": "src"
         }
     },
     "require-dev": {
