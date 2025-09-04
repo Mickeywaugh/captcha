@@ -1,5 +1,5 @@
 {
-    "name": "mickeywaugh/php-captcha",
+    "name": "mickeywaugh/captcha",
     "type": "library",
     "description": "Php Captcha generator base on Gregwar-captcha ",
     "keywords": [
