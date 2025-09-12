@@ -1,18 +1,17 @@
-Base On  Mickeywaugh/Captcha
+Base On  Gregwar/Captcha , compatible with php 8.0+
 =======
-
-![Captchas examples](http://gregwar.com/captchas.png)
 
 Installation
 ============
 
 With composer :
+composer require Mickeywaugh/Captcha
 
 ``` json
 {
     ...
     "require": {
-        "mickeywaugh/captcha": "1.*"
+        "mickeywaugh/Captcha": "1.*"
     }
 }
 ```
@@ -130,17 +129,6 @@ Complete example
 If you want to see an example you can have a look at the ``demo/form.php``, which uses ``demo/session.php`` to
 render a captcha and check it after the submission
 
-Symfony Bundle
-================
-
-You can have a look at the following repository to enjoy the Symfony 2 bundle packaging this captcha generator :
-https://gitee.com/Mickeywaugh/PhpCaptcha
-
-Yii2 Extension
-===============
-
-You can use the following extension for integrating with Yii2 Framework :
-https://github.com/juliardi/yii2-captcha
 
 License
 =======
