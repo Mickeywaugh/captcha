@@ -1,4 +1,4 @@
-Base On  Gregwar/Captcha , compatible with php 8.0+
+Base On  Gregwar/Captcha , compatible with php 8.0+, add setImageType(), and setBackgroundColor() support alpha channel;
 =======
 
 Installation
